@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.alma.mde.statemachine/src-gen" editDirectory="/org.alma.mde.statemachine.edit/src"
+    editorDirectory="/org.alma.mde.statemachine.editor/src" modelPluginID="org.alma.mde.statemachine"
+    forceOverwrite="true" modelName="Zhu" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.alma.mde.statemachine.edit"
+    editorPluginID="org.alma.mde.statemachine.editor" runtimeVersion="2.11">
+  <genPackages prefix="Zhu" basePackage="org.alma.mde.statemachine" disposableProviderFactory="true"
+      fileExtensions="zhu" ecorePackage="Zhu.ecore#/">
+    <genClasses ecoreClass="Zhu.ecore#//StateMachine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//StateMachine/region"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//TopRegion">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//TopRegion/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//TopRegion/regions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//TopRegion/transitions"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//Region">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Zhu.ecore#//Region/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//Region/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//Region/regions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//Region/transitions"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//Transitions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//Transitions/firstTransition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//Transitions/followingTransitions"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Zhu.ecore#//Transition/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Zhu.ecore#//Transition/target"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//Transition/triggers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Zhu.ecore#//Transition/guard"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Zhu.ecore#//Transition/behaviour"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//States">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//States/states"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//StatesSeparated">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//StatesSeparated/firstState"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//StatesSeparated/followingStates"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Zhu.ecore#//State/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//Triggers">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Zhu.ecore#//Triggers/triggers"/>
+    </genClasses>
+    <genClasses ecoreClass="Zhu.ecore#//TriggersSeparated">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Zhu.ecore#//TriggersSeparated/firstTrigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Zhu.ecore#//TriggersSeparated/followingTriggers"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,38 @@
+diagram {	
+	region {
+		states: {
+			> Ordered,
+		  	  Available,
+			* Reserved
+		}
+		
+		region Unavailable {
+			states: {
+				Borrowed,
+				Reserved
+			}
+		}			
+	
+		transitions: [
+			{
+				states: Ordered -> Available,
+				triggers: {
+					"trigger 1",
+					"trigger 2"
+				},			
+				guard: "reservations->size()=1",
+				behaviour: "Deliver"			 
+			},
+			
+			{
+				states: Ordered -> Reserved,
+				behaviour: "Deliver"
+			},
+				
+			{
+				states: Unavailable -> Unavailable,
+				behaviour: "Reserve(p)"
+			}					
+		]	
+	}
+}
