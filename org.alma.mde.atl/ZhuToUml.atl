@@ -1,0 +1,7 @@
+module ZhuToUml;
+
+-- @path Zhu=/org.alma.mde.statemachine/model/generated/Zhu.ecore
+-- @nsURI Uml=http://www.eclipse.org/UML2/2.0.0/UML
+	
+create OUT: Uml from IN: Zhu;
+	

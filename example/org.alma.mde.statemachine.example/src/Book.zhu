@@ -30,7 +30,7 @@ diagram {
 			},
 				
 			{
-				states: Unavailable -> Unavailable,
+				states: Available -> Available,
 				behaviour: "Reserve(p)"
 			}					
 		]	
