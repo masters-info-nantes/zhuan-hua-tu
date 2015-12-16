@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<zhu:StateMachine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:zhu="http://www.alma.org/mde/statemachine/Zhu">
+  <region>
+    <states>
+      <states>
+        <firstState name="Ordered"/>
+        <followingStates name="Available"/>
+        <followingStates name="Reserved"/>
+      </states>
+    </states>
+    <regions name="Unavailable">
+      <states>
+        <states>
+          <firstState name="Borrowed"/>
+          <followingStates name="Reserved"/>
+        </states>
+      </states>
+    </regions>
+    <transitions>
+      <firstTransition guard="reservations->size()=1" behaviour="Deliver">
+        <source href="model/Book.zhu#|0"/>
+        <target href="model/Book.zhu#|1"/>
+        <triggers>
+          <triggers firstTrigger="trigger 1">
+            <followingTriggers>trigger 2</followingTriggers>
+          </triggers>
+        </triggers>
+      </firstTransition>
+      <followingTransitions behaviour="Deliver">
+        <source href="model/Book.zhu#|2"/>
+        <target href="model/Book.zhu#|3"/>
+      </followingTransitions>
+      <followingTransitions behaviour="Reserve(p)">
+        <source href="model/Book.zhu#|4"/>
+        <target href="model/Book.zhu#|5"/>
+      </followingTransitions>
+    </transitions>
+  </region>
+</zhu:StateMachine>

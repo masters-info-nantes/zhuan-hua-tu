@@ -1,7 +1,29 @@
 module ZhuToUml;
 
--- @path Zhu=/org.alma.mde.statemachine/model/generated/Zhu.ecore
--- @nsURI Uml=http://www.eclipse.org/UML2/2.0.0/UML
-	
-create OUT: Uml from IN: Zhu;
-	
+-- @path IM=/org.alma.mde.statemachine/model/generated/Zhu.ecore
+-- @path OM=/org.alma.mde.atl/UML.ecore
+
+create OUT: OM from IN: IM;
+
+
+rule State {
+	from
+		mmstate: IM!State
+	to
+		umlstate: OM!State  (
+			name <- mmstate.name
+		)
+}
+
+rule Transition {
+	from
+		mmstate: IM!Transition
+	to
+		umlstate: OM!Transition (
+			source <- mmstate.source,
+			target <- mmstate.target,
+			triggers <- mmstate.triggers,
+			guard <- mmstate.guard
+		)
+}
+
